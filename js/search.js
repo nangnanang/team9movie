@@ -1,8 +1,7 @@
-import { movies, fetchMovies } from './fetchData.js';
+import { movies, fetchMovies } from "./fetchData.js";
 
 const searchInput = document.querySelector("#searchInput");
-const searchBtn = document.querySelector("#searchBtn")
-
+const searchBtn = document.querySelector("#searchBtn");
 
 fetchMovies().then(() => {
   searchBtn.addEventListener("click", (e) => {
@@ -14,9 +13,11 @@ fetchMovies().then(() => {
       alert("검색어를 입력해주세요.");
       searchInput.focus();
       return;
-    };
+    }
 
-    const filteredMovies = movies.filter(movie => movie.title.toLowerCase().includes(value));
+    const filteredMovies = movies.filter((movie) =>
+      movie.title.toLowerCase().includes(value)
+    );
 
     const searchMovie = document.querySelector("#cardList");
     searchMovie.innerHTML = "";
@@ -27,7 +28,7 @@ fetchMovies().then(() => {
       return;
     }
 
-    filteredMovies.forEach(movie => {
+    filteredMovies.forEach((movie) => {
       const filteredMovie = document.createElement("div");
       filteredMovie.classList.add("movie");
 
@@ -52,4 +53,4 @@ fetchMovies().then(() => {
       searchMovie.appendChild(filteredMovie);
     });
   });
-})
+});
