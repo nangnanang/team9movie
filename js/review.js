@@ -47,7 +47,7 @@ reviewAddBtn.addEventListener("click", addReviewCard);
 // 리뷰 데이터 불러오기
 const getReviewData = () => {
   let reviewData = JSON.parse(localStorage.getItem(`review${movieId}`)) || [];
-  return reviewData
+  return reviewData;
 };
 
 //리뷰 카드 생성하기

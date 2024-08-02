@@ -96,6 +96,10 @@ input {
   color: white;
 }
 
+.outputContent {
+  white-space: pre-wrap;
+}
+
 .deleteBtn {
   background-color: red;
   border: none;

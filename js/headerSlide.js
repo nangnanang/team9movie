@@ -1,6 +1,7 @@
 import { movies, fetchMovies } from "./fetchData.js";
 import "./genre.js";
 import "./search.js";
+import "./sort.js";
 
 fetchMovies().then(() => {
   sliderFunc();
