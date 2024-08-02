@@ -3,13 +3,20 @@ input {
 }
 
 .reviewDiv {
+  position: absolute;
+
+  left: 50%;
+  top: 60%;
   width: 700px;
+  height: 350px;
+  margin: 10px;
 
   display: flex;
 }
 
 .reviewBox {
-  width: 100%;
+  width: 700px;
+  padding: 5px;
 
   display: flex;
   flex-direction: column;
@@ -26,15 +33,20 @@ input {
 }
 
 .reviewContentInput {
-  width: 650px;
+  width: 670px;
   height: 80px;
   margin: 5px 0;
 
   font-size: 30px;
+  font-weight: 700;
+  color: black;
+  background-color: transparent;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: white;
 }
 
 .utilityBox {
-  width: 650px;
+  width: 670px;
 }
 
 .reviewNicknameInput {
@@ -43,7 +55,8 @@ input {
 
   margin: 5px 0;
 
-  font-size: 15px;
+  font-size: 20px;
+  background-color: transparent;
 }
 
 .reviewPasswordInput {
@@ -52,14 +65,13 @@ input {
 
   margin: 5px 0;
 
-  font-size: 15px;
+  font-size: 20px;
+  background-color: transparent;
 }
 
 .reviewAddBtn {
   width: 20%;
   height: 30px;
-
-  margin: 10px;
 
   float: right;
   font-size: 20px;
@@ -83,6 +95,9 @@ input {
   grid-template-columns: repeat(1, minmax(20px, 800px));
   justify-content: center;
   text-align: center;
+
+  margin: 10px;
+  overflow-y: scroll;
 }
 
 .oneReview {
@@ -90,20 +105,39 @@ input {
 
   display: flex;
   flex-direction: column;
-
-  background-color: blanchedalmond;
 }
 
 .outputNickname {
+  margin: 5px auto;
+  padding: 5px;
+  border: 2px solid salmon;
+  border-radius: 5px;
+
+  font-size: 20px;
+  font-weight: 700;
+  color: white;
+  background-color: black;
+}
+
+.outputContent {
+  margin: 5px auto;
+  padding: 5px;
+  border: 2px solid salmon;
+  border-radius: 5px;
+
+  font-size: 20px;
+  font-weight: 700;
+  color: white;
+  background-color: black;
+  white-space: pre;
 }
 
 .deleteBtn {
-  display: flex;
-  text-align: center;
-  justify-content: center;
+  margin: 5px auto;
 
   color: red;
   font-size: 20px;
+  font-weight: 900;
   border: none;
   background-color: transparent;
 }
