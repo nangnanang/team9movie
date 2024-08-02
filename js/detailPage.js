@@ -4,12 +4,21 @@ fetchMovies().then(() => {
     createDetailPage(movies);
 })
 
-
+const GENRE_MAP = {
+    35: "코미디",
+    53: "스릴러",
+    28: "맥션",
+    10749: "로맨스",
+    18: "드라마"
+  };
+  const movie = movies
+  const genreNumber = movie.genre_ids;
+  const genreText = GENRE_MAP[genreNumber];
 
 // 상세페이지 데이터 입력
 function createDetailPage() {
     const movieInfo = document.createElement('div');
-    const movie = movies
+    
     console.log(movie);
     movieInfo.className = 'topPosition';
     movieInfo.innerHTML = `
@@ -25,14 +34,15 @@ function createDetailPage() {
                 </div>
 
                 <div class="contents2">
-                    <div class="genre">장르</div>
-                    <div class="date">${movie.relase_date}</div>
+                    <div class="genre">${genreText}</div>
+                    <div class="date">${movie.release_date}</div>
                     <div class="rate"><span>평점: ${movie.vote_average}</span></div>
                 </div>
             </div>
 `;
     // card.addEventListener('click', () => alert(`Movie ID: ${movie.id}`));
-    return movieInfo;
+    document.querySelector('allPosition').append(movieInfo);
+
     
 }
 
