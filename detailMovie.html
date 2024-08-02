@@ -4,6 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>구르면서 영화보기</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Jua&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="./css/detailMovie.css" />
     <link rel="stylesheet" href="./css/review.css" />
     <script type="module" src="./js/review.js"></script>
@@ -24,25 +28,22 @@
       <div class="reviewDiv">
         <div class="reviewBox">
           <div class="reviewInputBox">
-            <div>
-              <div>
-                <input class="reviewNicknameInput" placeholder="닉네임" />
-                <input class="reviewPasswordInput" placeholder="비밀번호" />
-              </div>
-              <div>
-                <textarea
-                  class="reviewContentInput"
-                  placeholder="리뷰를 입력해주세요"
-                ></textarea>
-                <button class="reviewAddBtn">추가</button>
-              </div>
+            <textarea
+              class="reviewContentInput"
+              placeholder="리뷰를 입력해주세요"
+            ></textarea>
+            <div class="utilityBox">
+              <input class="reviewNicknameInput" placeholder="닉네임" />
+              <input class="reviewPasswordInput" placeholder="비밀번호" />
+
+              <button class="reviewAddBtn">추가</button>
             </div>
           </div>
           <div class="reviewOutputBox">
             <div class="oneReview">
               <div class="outputNickname">${nickname}</div>
               <div class="outputContent">${content}</div>
-              <button class="deleteBtn" id="${password}">삭제</button>
+              <button class="deleteBtn" id="${password}">X</button>
             </div>
           </div>
         </div>

@@ -1,4 +1,4 @@
-import { createDetailPage } from "./detailPage.js";
+import "./detailPage.js";
 
 const searchId = new URLSearchParams(window.location.search);
 const movieId = searchId.get("movieId");
@@ -78,7 +78,7 @@ const makeReviewData = () => {
       <div class="oneReview">
         <div class="outputNickname">${nickname}</div>
         <div class="outputContent">${content}</div>
-        <button class="deleteBtn" id="${password}">삭제</button>
+        <button class="deleteBtn" id="${password}">X</button>
       </div>`;
   });
 };

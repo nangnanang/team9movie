@@ -3,19 +3,18 @@ input {
 }
 
 .reviewDiv {
-  width: 100%;
-  display: flex;
+  width: 700px;
 
-  justify-content: center;
+  display: flex;
 }
 
 .reviewBox {
-  width: 1000px;
+  width: 100%;
 
   display: flex;
   flex-direction: column;
 
-  background-color: antiquewhite;
+  border: 1px solid white;
 }
 
 .reviewInputBox {
@@ -23,40 +22,42 @@ input {
   align-items: center;
   flex-direction: column;
 
-  margin: 20px;
-
-  background-color: aqua;
-}
-
-.reviewNicknameInput {
-  width: 100px;
-  height: 30px;
-
-  margin: 5px 0;
-
-  font-size: 20px;
-}
-
-.reviewPasswordInput {
-  width: 100px;
-  height: 30px;
-
-  margin: 5px 0;
-
-  font-size: 20px;
+  margin-bottom: 5px;
 }
 
 .reviewContentInput {
-  width: 600px;
+  width: 650px;
   height: 80px;
   margin: 5px 0;
 
-  font-size: 20px;
+  font-size: 30px;
+}
+
+.utilityBox {
+  width: 650px;
+}
+
+.reviewNicknameInput {
+  width: 20%;
+  height: 30px;
+
+  margin: 5px 0;
+
+  font-size: 15px;
+}
+
+.reviewPasswordInput {
+  width: 20%;
+  height: 30px;
+
+  margin: 5px 0;
+
+  font-size: 15px;
 }
 
 .reviewAddBtn {
-  width: 70px;
-  height: 70px;
+  width: 20%;
+  height: 30px;
 
   margin: 10px;
 
@@ -66,14 +67,14 @@ input {
 
   box-sizing: border-box;
   border-radius: 10px;
-  border-color: blue;
+  border-color: black;
   color: #fff;
-  box-shadow: 0 0 40px 40px blue inset, 0 0 0 0 blue;
+  box-shadow: 0 0 40px 40px black inset, 0 0 0 0 black;
   transition: all 150ms ease-in-out;
 
   &:hover {
     color: black;
-    box-shadow: 0 0 10px 0 blue inset, 0 0 10px 4px blue;
+    box-shadow: 0 0 10px 0 black inset, 0 0 10px 4px black;
   }
 }
 
@@ -81,22 +82,28 @@ input {
   display: grid;
   grid-template-columns: repeat(1, minmax(20px, 800px));
   justify-content: center;
-
-  background-color: aqua;
+  text-align: center;
 }
 
 .oneReview {
-  margin: 10px;
+  margin: 5px;
 
   display: flex;
   flex-direction: column;
-  background-color: beige;
+
+  background-color: blanchedalmond;
+}
+
+.outputNickname {
 }
 
 .deleteBtn {
   display: flex;
-}
+  text-align: center;
+  justify-content: center;
 
-.passwordBox {
-  display: none;
+  color: red;
+  font-size: 20px;
+  border: none;
+  background-color: transparent;
 }
