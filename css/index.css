@@ -173,9 +173,17 @@ a {
 }
 
 .title a {
-  color: #ff0000;
+  color: #fceb2c;
   text-decoration: none;
 }
+
+.explain{
+    font-family: "Nanum Gothic", sans-serif;
+    font-weight: 200;
+    font-style: normal;
+
+}
+
 
 .search-container {
   position: relative;
@@ -196,9 +204,10 @@ a {
   font-size: 24px;
 
   background: none;
-
-  outline: none;
-  border-bottom: 1px solid gray;
+margin-top: 30px;
+  outline: darkblue;
+  border: 1px solid gray;
+  border-radius: 100px;
   color: white;
 }
 
@@ -206,8 +215,11 @@ a {
   cursor: pointer;
   border: none;
   background: none;
-  font-size: 20px;
-  color: white;
+  font-size: 30px;
+  color: #fceb2c;
+  content: "\f494";
+  
+
 }
 
 /* ----------------정렬 버튼--------------- */
@@ -362,11 +374,12 @@ a {
   right: 0px;
   bottom: 0px;
   padding: 20px;
-  background-color: #d9d9d9;
+  background-color: white;
   color: #000000;
+ 
   /* border-radius: 10px; */
 
-  opacity: 0;
+  opacity: 0.1;
   visibility: hidden;
   display: flex;
   flex-direction: column;
@@ -418,7 +431,7 @@ a {
 
 /* 스크롤바 핸들 */
 .overviewBox p::-webkit-scrollbar-thumb {
-  background: #ff0000; /* 스크롤바 핸들의 색상 */
+  background:  #fceb2c; /* 스크롤바 핸들의 색상 */
   /* border-radius: 10px; */ /* 스크롤바 핸들의 둥근 모서리 */
 }
 

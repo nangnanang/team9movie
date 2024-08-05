@@ -9,14 +9,6 @@ fetchMovies().then((response) => {
     let date1 = new Date(movie1.release_date);
     let date2 = new Date(movie2.release_date);
 
-<<<<<<< HEAD
-    // console.log("Comparing:");
-    // console.log("movie1 date:", date1);
-    // console.log("movie2 date:", date2);
- 
-
-=======
->>>>>>> b38d9090bb98a4d38941fb86ef20d9d8f09e6928
     // Date 객체를 기반으로 비교하여 정렬
     return date2 - date1;
   });
@@ -32,14 +24,6 @@ fetchMovies().then((response) => {
     let date1 = new Date(movie1.release_date);
     let date2 = new Date(movie2.release_date);
 
-<<<<<<< HEAD
-    // console.log("Comparing:");
-    // console.log("movie1 date:", date1);
-    // console.log("movie2 date:", date2);
-  
-
-=======
->>>>>>> b38d9090bb98a4d38941fb86ef20d9d8f09e6928
     // Date 객체를 기반으로 비교하여 정렬
     return date1 - date2;
   });

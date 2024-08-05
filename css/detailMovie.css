@@ -1,6 +1,6 @@
 a {
   text-decoration: none;
-  color: rgb(255, 0, 0);
+  color:#fceb2c;;
 }
 
 .titleSection {
@@ -14,6 +14,11 @@ a {
   padding: 20px;
 }
 
+.btnMooon {
+  color: #fceb2c;
+  content: "\f494";
+}
+
 #home-button {
   width: 50px;
 }
@@ -23,6 +28,7 @@ a {
 }
 
 .topPosition {
+  
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -46,6 +52,7 @@ a {
 .moviePic > img {
   float: left;
   border-radius: 10px;
+  padding-bottom: 50px;
 }
 
 .contents {
@@ -71,6 +78,9 @@ a {
 }
 
 .summary {
+  font-family: "Nanum Gothic", sans-serif;
+  font-weight: 200;
+  font-style: normal;
   height: 160px;
   overflow-y: auto;
   -ms-overflow-style: none;
