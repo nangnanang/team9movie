@@ -1,3 +1,38 @@
+/* --------------------폰트-------------------- */
+@font-face {
+  font-family: 'LINESeedKR-Bd';
+  src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_11-01@1.0/LINESeedKR-Bd.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+}
+
+/* 홈 버튼 컨테이너 스타일 */
+.home-btn-container {
+  position: fixed;
+  top: 33px;
+  left: 20px;
+  width: 50px;
+  height: 50px;
+  transform: translateY(-50%); /* 버튼의 높이를 기준으로 중앙 맞춤 */
+  z-index: 1000; /* 버튼이 다른 요소 위에 오도록 보장 */
+}
+
+.home-btn {
+  cursor: pointer;
+  background-color: #fffde8;
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+  border: solid 1px #000000;
+}
+
+.home-btn img {
+  width: 100%; /* 이미지 너비를 버튼 너비에 맞춤 */
+  height: 100%; /* 이미지 높이를 버튼 높이에 맞춤 */
+  object-fit: cover; /* 이미지 비율을 유지하면서 버튼에 맞게 잘림 */
+  border-radius: 50%; /* 이미지와 버튼 모서리 맞춤 */
+}
+
 /* ---------------genre button---------------- */
 .button-container {
   position: fixed;
@@ -211,6 +246,14 @@ a {
   text-decoration: none;
 }
 
+#subtitle {
+  font-family: 'LINESeedKR';
+  font-weight: 310;
+  font-size: calc(0.3em + 1vw);
+  color: #fcf6dc;
+  line-height: 1.3em;
+}
+
 .search-container {
   position: relative;
 }
@@ -240,11 +283,25 @@ a {
 }
 
 .searchBtn {
+  margin-left: 20px;
+  width: 45px; /* 버튼의 너비 */
+  height: 45px; /* 버튼의 높이 */
   cursor: pointer;
-  border: none;
   background: none;
-  font-size: 20px;
-  color: white;
+  font-size: 24px;
+  color: #000000;
+  background-color: #fffde8;
+  border-radius: 50px;
+  border: none;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.searchBtn:hover {
+  background-color: #fd5a11;
+  color: #000000;
 }
 
 /* ----------------정렬 버튼--------------- */
@@ -364,17 +421,19 @@ h2 {
 }
 
 .contentTitle {
-  color: #000000;
-  font-weight: bold;
-  text-align: left; /* 텍스트 가운데 정렬 */
-  margin: 0; /* 불필요한 외부 여백 제거 */
-  padding: 10px 0; /* 위아래에 약간의 여백 추가 */
+  font-family: 'LINESeedKR';
+  color: #fffde8;
+  font-weight: 400;
+  text-align: left;
   width: 100%; /* 부모 요소의 전체 너비 사용 */
   text-overflow: ellipsis;
   overflow: hidden;
-  white-space: nowrap;
-  font-size: 1.2em;
+  white-space: nowrap;    /* 텍스트를 한 줄로 유지 */
+  font-size: 1.7em;
+  border-bottom: solid 1px #fffde886;
+  padding-bottom: 5px;
 }
+
 
 
 /* infoBox(vote+releaseDate) 추가 */
@@ -486,20 +545,29 @@ h2 {
 /* scrollBtn */
 .scrollBtn {
   cursor: pointer;
-  width: 30px;
-  height: 30px;
+  width: 50px;
+  height: 50px;
   border-radius: 50%;
-  color: white;
+  background-color: #fd5a11;
+  color: #000000;
   margin-left: auto;
 
   /* 하단에 붙어있게 */
+  /* display: flex; */
   position: fixed;
   bottom: 50px;
   right: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .scrollBtn i {
   font-size: 30px; /* 아이콘의 크기를 버튼에 맞게 조정 */
+}
+
+.height {
+  height: 100vh;
 }
 
 .height {
