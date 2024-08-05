@@ -1,3 +1,38 @@
+/* --------------------폰트-------------------- */
+@font-face {
+  font-family: 'LINESeedKR-Bd';
+  src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_11-01@1.0/LINESeedKR-Bd.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+}
+
+/* 홈 버튼 컨테이너 스타일 */
+.home-btn-container {
+  position: fixed;
+  top: 33px;
+  left: 20px;
+  width: 50px;
+  height: 50px;
+  transform: translateY(-50%); /* 버튼의 높이를 기준으로 중앙 맞춤 */
+  z-index: 1000; /* 버튼이 다른 요소 위에 오도록 보장 */
+}
+
+.home-btn {
+  cursor: pointer;
+  background-color: #fffde8;
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+  border: solid 1px #000000;
+}
+
+.home-btn img {
+  width: 100%; /* 이미지 너비를 버튼 너비에 맞춤 */
+  height: 100%; /* 이미지 높이를 버튼 높이에 맞춤 */
+  object-fit: cover; /* 이미지 비율을 유지하면서 버튼에 맞게 잘림 */
+  border-radius: 50%; /* 이미지와 버튼 모서리 맞춤 */
+}
+
 /* ---------------genre button---------------- */
 .button-container {
   position: fixed;
@@ -121,7 +156,39 @@ a {
   border: none;
 }
 
-.titleBox {
+
+/* 홈 버튼 컨테이너 스타일 */
+.home-btn-container {
+  position: fixed;
+  top: 33px;
+  left: 20px;
+  width: 50px;
+  height: 50px;
+  transform: translateY(-50%); /* 버튼의 높이를 기준으로 중앙 맞춤 */
+  z-index: 1000; /* 버튼이 다른 요소 위에 오도록 보장 */
+}
+
+.home-btn {
+  cursor: pointer;
+  background-color: #fffde8;
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+  border: solid 1px #000000;
+}
+
+.home-btn img {
+  width: 100%; /* 이미지 너비를 버튼 너비에 맞춤 */
+  height: 100%; /* 이미지 높이를 버튼 높이에 맞춤 */
+  object-fit: cover; /* 이미지 비율을 유지하면서 버튼에 맞게 잘림 */
+  border-radius: 50%; /* 이미지와 버튼 모서리 맞춤 */
+}
+
+/* ------------------genre menu-------------------- */
+
+.button-container {
+  position: fixed;
+  background-color: #fd5a11;
   width: 100%;
   height: 100vh;
   position: relative;
@@ -179,9 +246,20 @@ a {
   text-decoration: none;
 }
 
+#subtitle {
+  font-family: 'LINESeedKR';
+  font-weight: 310;
+  font-size: calc(0.3em + 1vw);
+  color: #fcf6dc;
+  line-height: 1.3em;
+}
+
 .search-container {
   position: relative;
 }
+
+
+/* ------------------search-------------------- */
 
 .searchBox {
   position: absolute;
@@ -205,11 +283,25 @@ a {
 }
 
 .searchBtn {
+  margin-left: 20px;
+  width: 45px; /* 버튼의 너비 */
+  height: 45px; /* 버튼의 높이 */
   cursor: pointer;
-  border: none;
   background: none;
-  font-size: 20px;
-  color: white;
+  font-size: 24px;
+  color: #000000;
+  background-color: #fffde8;
+  border-radius: 50px;
+  border: none;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.searchBtn:hover {
+  background-color: #fd5a11;
+  color: #000000;
 }
 
 /* ----------------정렬 버튼--------------- */
@@ -307,10 +399,16 @@ a {
   display: block;
   /* 이미지를 블록 요소로 설정하여 여백 제거 */
   /* border-radius: 10px; */
+  height: 350px;
+}
+
+h2 {
+  margin-top: 25px;
+  margin-bottom: 5px;
 }
 
 .contentBox {
-  padding: 20px 20px 0px 20px;
+  padding: 0px 20px 0px 20px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -323,23 +421,27 @@ a {
 }
 
 .contentTitle {
-  color: #000000;
-  font-weight: bold;
-  text-align: left; /* 텍스트 가운데 정렬 */
-  margin: 0; /* 불필요한 외부 여백 제거 */
-  padding: 10px 0; /* 위아래에 약간의 여백 추가 */
+  font-family: 'LINESeedKR';
+  color: #fffde8;
+  font-weight: 400;
+  text-align: left;
   width: 100%; /* 부모 요소의 전체 너비 사용 */
   text-overflow: ellipsis;
   overflow: hidden;
-  white-space: nowrap;
-  font-size: 1.2em;
+  white-space: nowrap;    /* 텍스트를 한 줄로 유지 */
+  font-size: 1.7em;
+  border-bottom: solid 1px #fffde886;
+  padding-bottom: 5px;
 }
+
+
 
 /* infoBox(vote+releaseDate) 추가 */
 .infoBox {
   width: 100%;
-  margin-top: 10px;
-  align-items: center; /* 수직 중앙 정렬 */
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 2px; /* 자식 요소들 사이의 간격을 5px로 설정하여 간격 줄이기 */
 }
 
 /* 평점 스타일 */
@@ -347,6 +449,7 @@ a {
   color: black;
   font-size: 18px;
   font-weight: 700;
+  margin-bottom: 2px;
 }
 
 /* ------------------------------------------------------- */
@@ -365,6 +468,7 @@ a {
 /* Overview 박스 스타일 */
 .overviewBox {
   position: absolute;
+  padding: 20px;
   top: 0;
   left: 0px;
   right: 0px;
@@ -395,10 +499,9 @@ a {
 
 /* 호버 - 제목 스타일 */
 .overviewBox h2 {
-  font-size: 35px;
+  font-size: 30px;
   font-weight: bold;
-  margin-bottom: 40px;
-  /* 제목-개요 사이 간격 */
+  word-break: keep-all;
   flex-direction: row;
   /* 호버 시 방향을 행으로 설정 */
   justify-content: flex-start;
@@ -410,20 +513,25 @@ a {
 }
 
 .overviewBox p {
-  font-size: 18px;
+  line-height: 25px;
+  font-size: 16.5px;
   padding-right: 15px;
-  overflow-y: auto; /* 내용이 넘칠 경우 스크롤 가능 */
+  overflow-y: auto;
+  /* 내용이 넘칠 경우 스크롤 가능 */
 }
 
 /* 전체 스크롤바 */
 .overviewBox p::-webkit-scrollbar {
-  width: 6px; /* 스크롤바의 너비 */
+  width: 6px;
+  /* 스크롤바의 너비 */
 }
 
 /* 스크롤바 트랙 */
 .overviewBox p::-webkit-scrollbar-track {
-  background: #fff; /* 스크롤바 배경 색상 */
-  /* border-radius: 10px; */ /* 스크롤바 트랙의 둥근 모서리 */
+  background: #fffde8;
+  /* 스크롤바 배경 색상 */
+  /* border-radius: 10px; */
+  /* 스크롤바 트랙의 둥근 모서리 */
 }
 
 /* 스크롤바 핸들 */
@@ -437,23 +545,29 @@ a {
 /* scrollBtn */
 .scrollBtn {
   cursor: pointer;
-  width: 30px;
-  height: 30px;
+  width: 50px;
+  height: 50px;
   border-radius: 50%;
-  color: white;
+  background-color: #fd5a11;
+  color: #000000;
   margin-left: auto;
 
   /* 하단에 붙어있게 */
+  /* display: flex; */
   position: fixed;
   bottom: 50px;
   right: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.scrollBtn > i {
-  margin: auto;
-  text-align: center;
-  font-size: var(-font-medium);
-  color: var(-color-dark-gray);
+.scrollBtn i {
+  font-size: 30px; /* 아이콘의 크기를 버튼에 맞게 조정 */
+}
+
+.height {
+  height: 100vh;
 }
 
 .height {
