@@ -1,7 +1,8 @@
 /* --------------------폰트-------------------- */
 @font-face {
   font-family: 'LINESeedKR-Bd';
-  src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_11-01@1.0/LINESeedKR-Bd.woff2') format('woff2');
+  src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_11-01@1.0/LINESeedKR-Bd.woff2')
+    format('woff2');
   font-weight: 700;
   font-style: normal;
 }
@@ -60,7 +61,7 @@
 }
 
 .genre > button:hover {
-  color: gray;
+  color: #ffc400;
   transition: all 0.5s;
 }
 
@@ -73,7 +74,7 @@
 /* ------------------header slide-------------------- */
 /* 슬라이더 전체 컨테이너 */
 #slider__wrap {
-  width: 50%;
+  width: 45%;
   overflow: hidden; /* 슬라이더가 컨테이너 밖으로 나가지 않도록 */
   position: relative;
   left: 100px;
@@ -98,7 +99,6 @@
 
 #slider img {
   width: 100%;
-  height: auto;
   display: block;
   border-radius: 10px;
   transition: transform 0.3s ease-in-out; /* 확대 효과를 위한 트랜지션 */
@@ -121,18 +121,17 @@
   transition: background 0.3s ease-in-out; /* 배경 전환 효과 */
 }
 
-/* ----------------------원페이지 스크롤----------------------- */
-
-/* .serach-container {
-  width: 100%;
-  height: 100vh;
-} */
-
-/* .container {
-  width: 100%;
-  height: 110vh;
-} */
 /* ------------------------------------------------------------ */
+html {
+  background: rgb(0, 0, 0);
+  background: linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(82, 71, 71, 0.925) 54%,
+    rgb(0, 0, 0) 100%
+  );
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -155,7 +154,6 @@ a {
   background-color: transparent;
   border: none;
 }
-
 
 /* 홈 버튼 컨테이너 스타일 */
 .home-btn-container {
@@ -185,35 +183,9 @@ a {
 }
 
 /* ------------------genre menu-------------------- */
-
-.button-container {
-  position: fixed;
-  background-color: #fd5a11;
-  width: 100%;
+.titleBox {
   height: 100vh;
-  position: relative;
-
-  display: flex;
-  flex-direction: column;
-  text-align: end;
-
-  background-color: rgb(0, 0, 0);
-}
-
-@media (max-height: 400px) {
-  .titleBox {
-    padding: 5px;
-  }
-
-  .searchBox {
-    width: 90%;
-    max-width: 400px;
-    margin-top: 5px;
-  }
-
-  .titleBox div {
-    font-size: 18px;
-  }
+  background-color: black;
 }
 
 .titleBox a {
@@ -232,17 +204,20 @@ a {
   width: 29%;
   right: 100px;
   top: 150px;
+
+  text-align: right;
 }
 
 .title {
   font-weight: 700;
-  font-size: 60px;
+  font-size: 70px;
   font-family: 'jua';
   border-bottom: 1px solid #1f1f1f;
 }
 
 .title a {
-  color: #ff0000;
+  color: #ffc400;
+  /* color: yellow; */
   text-decoration: none;
 }
 
@@ -258,10 +233,9 @@ a {
   position: relative;
 }
 
-
 /* ------------------search-------------------- */
-
 .searchBox {
+  margin-top: 25px;
   position: absolute;
 
   left: 50%; /* 부모 요소의 왼쪽에서 50% 이동 */
@@ -270,38 +244,33 @@ a {
 }
 
 .inputBox {
+  padding-left: 30px;
   width: 500px;
   height: 60px;
-  border: none;
+  border: 1px solid gray;
+  border-radius: 100px;
   font-size: 24px;
 
   background: none;
 
   outline: none;
-  border-bottom: 1px solid gray;
   color: white;
 }
 
 .searchBtn {
-  margin-left: 20px;
-  width: 45px; /* 버튼의 너비 */
-  height: 45px; /* 버튼의 높이 */
   cursor: pointer;
-  background: none;
-  font-size: 24px;
-  color: #000000;
-  background-color: #fffde8;
-  border-radius: 50px;
   border: none;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  background: none;
+  font-size: 30px;
+  color: #ffc400;
+  content: '\f494';
+  padding: 9px 10px;
 }
 
 .searchBtn:hover {
-  background-color: #fd5a11;
+  background-color: #ffc400;
   color: #000000;
+  border-radius: 100px;
 }
 
 /* ----------------정렬 버튼--------------- */
@@ -331,7 +300,6 @@ a {
 }
 
 /* --------------영화 카드-------------------- */
-
 .card-container {
   /* height: 100%; */
   margin: 0 auto;
@@ -391,6 +359,7 @@ a {
   align-items: center;
   height: max-content;
 }
+
 .oneCard img {
   width: 100%;
   object-fit: cover;
@@ -421,20 +390,18 @@ h2 {
 }
 
 .contentTitle {
-  font-family: 'LINESeedKR';
-  color: #fffde8;
+  font-family: 'jua';
+  color: black;
   font-weight: 400;
   text-align: left;
   width: 100%; /* 부모 요소의 전체 너비 사용 */
   text-overflow: ellipsis;
   overflow: hidden;
-  white-space: nowrap;    /* 텍스트를 한 줄로 유지 */
+  white-space: nowrap; /* 텍스트를 한 줄로 유지 */
   font-size: 1.7em;
   border-bottom: solid 1px #fffde886;
   padding-bottom: 5px;
 }
-
-
 
 /* infoBox(vote+releaseDate) 추가 */
 .infoBox {
@@ -463,8 +430,6 @@ h2 {
   position: relative;
 }
 
-
-
 /* Overview 박스 스타일 */
 .overviewBox {
   position: absolute;
@@ -486,8 +451,6 @@ h2 {
   align-items: flex-start;
   transition: opacity 0.3s ease, visibility 0.3s ease;
 }
-
-
 
 /* 카드에 마우스 올렸을때 overviewBox 호버 */
 .imgBox:hover .overviewBox {
@@ -536,11 +499,9 @@ h2 {
 
 /* 스크롤바 핸들 */
 .overviewBox p::-webkit-scrollbar-thumb {
-  background: #ff0000; /* 스크롤바 핸들의 색상 */
+  background: #ffc400; /* 스크롤바 핸들의 색상 */
   /* border-radius: 10px; */ /* 스크롤바 핸들의 둥근 모서리 */
 }
-
-
 
 /* scrollBtn */
 .scrollBtn {
@@ -548,7 +509,7 @@ h2 {
   width: 50px;
   height: 50px;
   border-radius: 50%;
-  background-color: #fd5a11;
+  background-color: #ffc400;
   color: #000000;
   margin-left: auto;
 
@@ -567,16 +528,4 @@ h2 {
 }
 
 .height {
-  height: 100vh;
-}
-
-.height {
-  height: 100vh;
-  background: rgb(0, 0, 0);
-  background: linear-gradient(
-    90deg,
-    rgba(0, 0, 0, 1) 0%,
-    rgba(82, 71, 71, 0.925) 54%,
-    rgb(0, 0, 0) 100%
-  );
 }

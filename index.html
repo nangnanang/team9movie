@@ -19,9 +19,8 @@
     <div class="home-btn-container">
       <button class="home-btn" onclick="window.location.href='./index.html';">
         <i class="buttonimg">
-          <img src="./img/9.gif" alt="Home Button">
+          <img src="./img/9.gif" alt="Home Button" />
         </i>
-        <!-- <i class="bi bi-house-door"></i> -->
       </button>
     </div>
     <div class="titleBox" id="titleBox">
@@ -85,8 +84,8 @@
           <a href="./index.html">9르면서 영화보기</a>
         </h1>
         <div id="subtitle">
-          심심할 때 영화를 보고 싶은데 </br> 어떤 영화를 봐야 할지 고민될 때 
-          </br>장르별로 검색해 볼 수 있습니다
+          심심할 때 영화를 보고 싶은데 <br />
+          어떤 영화를 봐야 할지 고민될 때 <br />장르별로 검색해 볼 수 있습니다
         </div>
       </header>
       <div class="search-container">
@@ -97,9 +96,15 @@
             id="searchInput"
             placeholder="검색할 영화를 입력해주세요"
           />
-          <button type="submit" id="searchBtn" class="searchBtn">
+          <button
+            data-target="#movie-list"
+            type="submit"
+            id="searchBtn"
+            class="searchBtn"
+          >
             <i class="bi bi-search"></i>
-          </button>        </form>
+          </button>
+        </form>
       </div>
     </div>
     <section class="height">

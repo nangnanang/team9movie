@@ -2,10 +2,8 @@ a {
   text-decoration: none;
 }
 
-body.background-reapeat
-
-.titleSection {
-  font-family: "jua";
+body.background-reapeat .titleSection {
+  font-family: 'jua';
   font-size: 24px;
   height: 50px;
   display: flex;
@@ -15,8 +13,14 @@ body.background-reapeat
   padding: 20px;
 }
 .title {
+  font-family: 'jua';
+  font-size: 48px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   text-decoration: none;
-  color: rgb(255, 0, 0);
+  color: #ffc400;
   transition: all 0.5s ease;
 }
 
@@ -75,7 +79,7 @@ body.background-reapeat
 }
 
 .theme {
-  font-family: "jua";
+  font-family: 'jua';
   font-size: 24px;
   font-weight: bold;
 }
@@ -99,19 +103,20 @@ body.background-reapeat
 }
 
 .genre {
-  width: 400px;
+  padding-left: 30px;
+  width: 350px;
   display: flex;
   align-items: center;
 }
 
 .date {
-  width: 160px;
+  width: 300px;
   display: flex;
   align-items: center;
 }
 
 .rate {
-  width: 160px;
+  width: 120px;
   display: flex;
   align-items: center;
 }

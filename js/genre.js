@@ -85,25 +85,25 @@ function setupGenreButtons() {
         const movieElement = document.createElement("div");
         movieElement.classList.add("movie");
         movieElement.innerHTML = `
-       <div class="oneCard">
-        <div class="imgBox">
-            <div class="overviewBox">               
-                <p>${movie.overview}</p>
-            </div>
-            <img src="https://image.tmdb.org/t/p/w500${movie.poster_path}" alt="${movie.title} 포스터">
-        </div>
-        <a href="detailMovie.html?movieId=${movie.id}">
-            <div class="movie-content-position">
-                <div class="contentBox">
-                    <h2 class="contentTitle">${movie.title}</h2>
-                    <div class="infoBox">
-                        <p class="vote"><b>평점:</b> ${movie.vote_average}</p>
-                        <p class="releaseDate"><b>개봉일:</b> ${movie.release_date}</p>
-                    </div>
-                </div>
-            </div>
-        </a>
-    </div>
+            <div class="oneCard">
+             <div class="imgBox">
+                 <div class="overviewBox">               
+                     <p>${movie.overview}</p>
+                 </div>
+                 <img src="https://image.tmdb.org/t/p/w500${movie.poster_path}" alt="${movie.title} 포스터">
+             </div>
+             <a href="detailMovie.html?movieId=${movie.id}">
+                 <div class="movie-content-position">
+                     <div class="contentBox">
+                         <h2 class="contentTitle">${movie.title}</h2>
+                         <div class="infoBox">
+                             <p class="vote"><b>평점:</b> ${movie.vote_average}</p>
+                             <p class="releaseDate"><b>개봉일:</b> ${movie.release_date}</p>
+                         </div>
+                     </div>
+                 </div>
+             </a>
+            /div>  
         `;
 
         cardList.appendChild(movieElement);
