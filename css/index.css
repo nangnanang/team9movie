@@ -297,7 +297,7 @@ a {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100%;
+  height: max-content;
 }
 .oneCard img {
   width: 100%;
@@ -356,6 +356,12 @@ a {
   font-size: 18px;
 }
 
+.imgBox {
+  position: relative;
+}
+
+
+
 /* Overview 박스 스타일 */
 .overviewBox {
   position: absolute;
@@ -377,8 +383,10 @@ a {
   transition: opacity 0.3s ease, visibility 0.3s ease;
 }
 
+
+
 /* 카드에 마우스 올렸을때 overviewBox 호버 */
-.oneCard:hover .overviewBox {
+.imgBox:hover .overviewBox {
   opacity: 1;
   visibility: visible;
   flex-direction: column;
@@ -424,10 +432,7 @@ a {
   /* border-radius: 10px; */ /* 스크롤바 핸들의 둥근 모서리 */
 }
 
-.oneCard:hover .contentBox {
-  opacity: 0;
-  /*기본 상태에서는 줄거리 보이지 않도록 설정 */
-}
+
 
 /* scrollBtn */
 .scrollBtn {
