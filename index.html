@@ -1,85 +1,113 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>9르면서 영화보기</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css" />
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Black+Han+Sans&display=swap');
-  </style>
-  <link rel="stylesheet" href="./css/index.css" />
-</head>
-
-<body>
-  <div class="home-btn-container">
-    <button class="home-btn" onclick="window.location.href='./index.html';">
-      <i class="buttonimg">
-        <img src="./img/9.gif" alt="Home Button">
-      </i>
-      <!-- <i class="bi bi-house-door"></i> -->
-    </button>
-  </div>
-  <div class="button-container">
-    <div class="genre">
-      <button data-target="#movie-list" class="genre-btn" id="all-btn" genre="all">
-        전체 보기
-      </button>
-      <button data-target="#movie-list" class="genre-btn" id="comedy-btn" genre="comedy">
-        코미디
-      </button>
-      <button data-target="#movie-list" class="genre-btn" id="thriller-btn" genre="thriller">
-        스릴러
-      </button>
-      <button data-target="#movie-list" class="genre-btn" id="action-btn" genre="action">
-        액션
-      </button>
-      <button data-target="#movie-list" class="genre-btn" id="romance-btn" genre="romance">
-        로맨스
-      </button>
-      <button data-target="#movie-list" class="genre-btn" id="drama-btn" genre="drama">
-        드라마
-      </button>
-    </div>
-  </div>
-
-  <div class="titleBox" id="titleBox">
-    <div id="slider__wrap">
-      <div id="slider"></div>
-    </div>
-    <div class="introduce">
-      <h1 class="title">
-        <a href="./index.html">9르면서 <br> 영화보기</a>
-      </h1>
-      <div id="subtitle">
-        심심할 때 영화를 보고 싶은데 </br> 어떤 영화를 봐야 할지 고민될 때 
-        </br>장르별로 검색해 볼 수 있습니다
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ꔛ9르면서 영화보기ꔛ</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Jua&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/index.css" />
+    <script type="module" src="./js/headerSlide.js"></script>
+  </head>
+  <body>
+    <div class="titleBox" id="titleBox">
+      <div class="button-container">
+        <div class="genre">
+          <button
+            data-target="#movie-list"
+            class="genre-btn"
+            id="all-btn"
+            genre="all"
+          >
+            전체 보기
+          </button>
+          <button
+            data-target="#movie-list"
+            class="genre-btn"
+            id="comedy-btn"
+            genre="comedy"
+          >
+            코미디
+          </button>
+          <button
+            data-target="#movie-list"
+            class="genre-btn"
+            id="thriller-btn"
+            genre="thriller"
+          >
+            스릴러
+          </button>
+          <button
+            data-target="#movie-list"
+            class="genre-btn"
+            id="action-btn"
+            genre="action"
+          >
+            액션
+          </button>
+          <button
+            data-target="#movie-list"
+            class="genre-btn"
+            id="romance-btn"
+            genre="romance"
+          >
+            로맨스
+          </button>
+          <button
+            data-target="#movie-list"
+            class="genre-btn"
+            id="drama-btn"
+            genre="drama"
+          >
+            드라마
+          </button>
+        </div>
+      </div>
+      <div id="slider__wrap">
+        <div id="slider"></div>
+      </div>
+      <header class="introduce">
+        <h1 class="title">
+          <a href="./index.html">9르면서 영화보기</a>
+        </h1>
+        <div>
+          심심할 때, 그냥 영화를 보고싶은데 뭘봐야 좋을지 모를 때 장르별로
+          검색해볼 수 있습니다.
+        </div>
+      </header>
+      <div class="search-container">
+        <form class="searchBox">
+          <input
+            type="text"
+            class="inputBox"
+            id="searchInput"
+            placeholder="검색할 영화를 입력해주세요"
+          />
+          <button type="submit" id="searchBtn" class="searchBtn">검색</button>
+        </form>
       </div>
     </div>
-  </div>
+    <section class="height">
+      <div class="newOld">
+        <button id="newest">최신순&nbsp;&nbsp;&nbsp;/</button>
+        <button id="oldest">오래된순</button>
+      </div>
 
-  <div class="search-container">
-    <form class="searchBox">
-      <input type="text" class="inputBox" id="searchInput" placeholder="검색할 영화를 입력해주세요." />
-      <button type="submit" id="searchBtn" class="searchBtn">
-        <i class="bi bi-search"></i>
-      </button>
-    </form>
-  </div>
+      <div>
+        <section id="movie-list" class="card-container">
+          <div class="cardList" id="cardList"></div>
+        </section>
+      </div>
+    </section>
 
-  <div class="card-container">
-      <div class="cardList" id="cardList"></div>
-  </div>
-
-  <button class="scrollBtn">
-    <i class="bi bi-arrow-bar-up"></i>
-  </button>
-  <script type="module" src="./js/fetchData.js"></script>
-  <script type="module" src="./js/headerSlide.js"></script>
-  <script type="module" src="./js/genre.js" defer></script>
-  <script type="module" src="./js/search.js"></script>
-  <script type="module" src="./js/detailPage.js"></script>
-</body>
-
+    <button class="scrollBtn">
+      <i class="bi bi-arrow-bar-up"></i>
+    </button>
+  </body>
 </html>

@@ -1,16 +1,27 @@
-body {
+a {
+  text-decoration: none;
 }
 
+body.background-reapeat
+
 .titleSection {
-  color: rgb(255, 0, 0);
-  font-family: 'jua';
-  font-size: 28px;
+  font-family: "jua";
+  font-size: 24px;
   height: 50px;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   padding: 20px;
+}
+.title {
+  text-decoration: none;
+  color: rgb(255, 0, 0);
+  transition: all 0.5s ease;
+}
+
+.title:hover {
+  color: white;
 }
 
 #home-button {
@@ -49,7 +60,7 @@ body {
 
 .contents {
   position: relative;
-  bottom: 200px;
+  bottom: 220px;
   width: 50%;
   float: right;
   color: white;
@@ -64,7 +75,7 @@ body {
 }
 
 .theme {
-  font-family: 'jua';
+  font-family: "jua";
   font-size: 24px;
   font-weight: bold;
 }
@@ -75,7 +86,8 @@ body {
   -ms-overflow-style: none;
   scrollbar-width: none;
   margin: 0px;
-  padding: 10px;
+  padding-bottom: 40px;
+  margin-bottom: 20px;
 }
 
 .contents2 {
@@ -83,10 +95,11 @@ body {
   flex-direction: row;
   justify-content: space-between;
   height: 30px;
+  padding-bottom: 20px;
 }
 
 .genre {
-  width: 300px;
+  width: 400px;
   display: flex;
   align-items: center;
 }

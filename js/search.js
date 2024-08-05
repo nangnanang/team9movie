@@ -1,8 +1,7 @@
-import { movies, fetchMovies } from './fetchData.js';
+import { movies, fetchMovies } from "./fetchData.js";
 
 const searchInput = document.querySelector("#searchInput");
-const searchBtn = document.querySelector("#searchBtn")
-
+const searchBtn = document.querySelector("#searchBtn");
 
 fetchMovies().then(() => {
   searchBtn.addEventListener("click", (e) => {
@@ -14,9 +13,11 @@ fetchMovies().then(() => {
       alert("검색어를 입력해주세요.");
       searchInput.focus();
       return;
-    };
+    }
 
-    const filteredMovies = movies.filter(movie => movie.title.toLowerCase().includes(value));
+    const filteredMovies = movies.filter((movie) =>
+      movie.title.toLowerCase().includes(value)
+    );
 
     const searchMovie = document.querySelector("#cardList");
     searchMovie.innerHTML = "";
@@ -27,31 +28,29 @@ fetchMovies().then(() => {
       return;
     }
 
-    filteredMovies.forEach(movie => {
+    filteredMovies.forEach((movie) => {
       const filteredMovie = document.createElement("div");
       filteredMovie.classList.add("movie");
 
       filteredMovie.innerHTML = `
-        <div class="oneCard">
-          <a href="detailMovie.html?movieId=${movie.id}">
-            <div class="poster">
-            <img src="https://image.tmdb.org/t/p/w500${movie.poster_path}" alt="${movie.title} 포스터">
-            </div>
-            <div class="contentBox">
-              <h2 class="contentTitle">${movie.title}</h2>
-              <div class="infoBox">
-                <p class="vote">평점: ${movie.vote_average}</p>
-                <p class="releaseDate">개봉일: ${movie.release_date}</p>
+          <div class="oneCard">
+            <a href="detailMovie.html?movieId=${movie.id}">
+              <img src="https://image.tmdb.org/t/p/w500${movie.poster_path}" alt="${movie.title} 포스터">
+              <div class="contentBox">
+                <h2 class="contentTitle">${movie.title}</h2>
+                <div class="infoBox">
+                  <p class="vote"><b>평점:</b> ${movie.vote_average}</p>
+                  <p class="releaseDate"><b>개봉일:</b> ${movie.release_date}</p>
+                </div>
               </div>
-            </div>
-            <div class="overviewBox">
-              <div class="overviewTitle">${movie.title}</div>
-              <p>${movie.overview}</p>
-            </div>
-          </a>
-        </div>
-      `;
+              <div class="overviewBox">
+                <h2 class="overviewTitle">${movie.title}</h2>
+                <p>${movie.overview}</p>
+              </div>
+            </a>
+          </div>
+    `;
       searchMovie.appendChild(filteredMovie);
     });
   });
-})
+});

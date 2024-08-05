@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>구르면서 영화보기</title>
+    <title>ꔛ9르면서 영화보기ꔛ</title>
     <link
       href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Jua&display=swap"
       rel="stylesheet"
@@ -16,9 +16,7 @@
   <body>
     <header>
       <div class="titleSection">
-        <button type="button" id="home-button">home</button>
-        <h1 class="title">구르면서 영화보기</h1>
-        <div style="width: 70px"></div>
+        <h1><a class="title" href="./index.html">구르면서 영화보기</a></h1>
       </div>
     </header>
 
@@ -28,27 +26,25 @@
       <div class="reviewDiv">
         <div class="reviewBox">
           <div class="reviewInputBox">
-            <div>
-              <div>
-                <input class="reviewNicknameInput" placeholder="닉네임" />
-                <input class="reviewPasswordInput" placeholder="비밀번호" />
-              </div>
-              <div>
-                <textarea
-                  class="reviewContentInput"
-                  placeholder="리뷰를 입력해주세요"
-                ></textarea>
-                <button class="reviewAddBtn">추가</button>
-              </div>
+            <div class="utilityBox">
+              <input class="reviewNicknameInput" placeholder="닉네임" />
+              <input class="reviewPasswordInput" placeholder="비밀번호" />
+              <select class="starSelect" id="star">
+                <option value="1">⭐</option>
+                <option value="2">⭐⭐</option>
+                <option value="3">⭐⭐⭐</option>
+                <option value="4">⭐⭐⭐⭐</option>
+                <option value="5">⭐⭐⭐⭐⭐</option>
+              </select>
+
+              <button class="reviewAddBtn">추가</button>
             </div>
+            <textarea
+              class="reviewContentInput"
+              placeholder="리뷰를 입력해주세요"
+            ></textarea>
           </div>
-          <div class="reviewOutputBox">
-            <div class="oneReview">
-              <div class="outputNickname">${nickname}</div>
-              <div class="outputContent">${content}</div>
-              <button class="deleteBtn" id="${password}">삭제</button>
-            </div>
-          </div>
+          <div class="reviewOutputBox"></div>
         </div>
       </div>
     </section>

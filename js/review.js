@@ -1,4 +1,4 @@
-import { createDetailPage } from "./detailPage.js";
+import "./detailPage.js";
 
 const searchId = new URLSearchParams(window.location.search);
 const movieId = searchId.get("movieId");
@@ -12,14 +12,17 @@ const setReviewData = () => {
   let nickname = document.querySelector(".reviewNicknameInput").value;
   let password = document.querySelector(".reviewPasswordInput").value;
   let content = document.querySelector(".reviewContentInput").value;
+  let star = document.querySelector("#star").value;
 
   let obj = {
     nickname: nickname,
     password: password,
     content: content,
+    star: star,
   };
-  let review = JSON.parse(localStorage.getItem(`review${movieId}`));
-  review.push(obj);
+
+  let review = JSON.parse(localStorage.getItem(`review${movieId}`)) || [];
+  review.unshift(obj);
 
   localStorage.setItem(`review${movieId}`, JSON.stringify(review));
   location.reload();
@@ -30,6 +33,7 @@ const addReviewCard = () => {
   let nickname = document.querySelector(".reviewNicknameInput").value;
   let password = document.querySelector(".reviewPasswordInput").value;
   let content = document.querySelector(".reviewContentInput").value;
+  let star = document.querySelector("#star").value;
 
   if (!nickname) {
     return alert("닉네임을 입력해주세요");
@@ -37,7 +41,10 @@ const addReviewCard = () => {
     return alert("비밀번호를 입력해주세요");
   } else if (!content) {
     return alert("리뷰를 입력해주세요");
-  } else {
+  } else if (!star) {
+    return alert("평점을 입력해주세요");
+  }
+  {
     setReviewData();
   }
 };
@@ -45,40 +52,31 @@ reviewAddBtn.addEventListener("click", addReviewCard);
 
 // 리뷰 데이터 불러오기
 const getReviewData = () => {
-  let reviewData = [];
-  function check() {
-    let obj = JSON.parse(localStorage.getItem(`review${movieId}`));
-    if (!obj) {
-      let dummyArr = [
-        { nickname: "닉네임", password: "비밀번호", content: "내용" },
-      ];
-      let dummyData = JSON.stringify(dummyArr);
-      localStorage.setItem(`review${movieId}`, dummyData);
-
-      let dummyObj = JSON.parse(localStorage.getItem(`review${movieId}`));
-      reviewData = dummyObj;
-    } else {
-      reviewData = obj;
-    }
+  let reviewData = JSON.parse(localStorage.getItem(`review${movieId}`));
+  if (reviewData === null) {
+    reviewData = [];
   }
-  check();
-
   return reviewData;
 };
 
 //리뷰 카드 생성하기
 const makeReviewData = () => {
   let reviewData = getReviewData();
+  reviewOutputBox.innerHTML = "";
+
+  // 최신 리뷰가 위로 오도록 reverse() 사용
   reviewData.forEach((element) => {
     let nickname = element.nickname;
     let password = element.password;
     let content = element.content;
+    let star = "⭐".repeat(element.star);
 
     reviewOutputBox.innerHTML += `
       <div class="oneReview">
         <div class="outputNickname">${nickname}</div>
+        <div class="outputContent">${star}</div>
         <div class="outputContent">${content}</div>
-        <button class="deleteBtn" id="${password}">삭제</button>
+        <button class="deleteBtn" id="${password}">X</button>
       </div>`;
   });
 };
