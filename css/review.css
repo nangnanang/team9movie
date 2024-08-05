@@ -24,7 +24,7 @@ input {
   background-color: black;
   opacity: 0.8;
   padding: 20px;
-  height: 80px;
+  height: 90px;
   border-radius: 10px;
   margin-bottom: 10px;
 }
@@ -40,6 +40,18 @@ input {
   border: none;
   border-bottom: 1px solid white;
   padding: 0 5px;
+  text-align: left;
+}
+
+.starSelect {
+  width: 180px;
+  height: 30.89px;
+  outline: none;
+  font-size: 20px;
+  color: white;
+  background: none;
+  border: none;
+  border-bottom: 1px solid white;
   text-align: left;
 }
 
@@ -60,6 +72,9 @@ input {
 }
 
 .reviewAddBtn {
+  position: relative;
+  top: 50%;
+  right: 1%;
   width: 70px;
   height: 40px;
 
@@ -69,8 +84,17 @@ input {
   font-size: 20px;
   font-weight: 700;
   background-color: red;
+  border: none;
   border-radius: 10px;
   color: #fff;
+
+  transition: all 0.5s ease;
+}
+
+.reviewAddBtn:hover {
+  background-color: white;
+  color: red;
+  transform: scale(1.2);
 }
 
 .reviewOutputBox {
@@ -109,6 +133,13 @@ input {
   cursor: pointer;
   margin-top: 10px;
   float: right;
+  transition: all 0.5s ease;
+}
+
+.deleteBtn:hover {
+  background-color: white;
+  color: red;
+  transform: scale(1.2);
 }
 
 /* 반응형 디자인 */
@@ -121,7 +152,8 @@ input {
 
   .reviewNicknameInput,
   .reviewPasswordInput,
-  .reviewContentInput {
+  .reviewContentInput,
+  .starSelect {
     font-size: 14px; /* 작은 화면에서 폰트 크기 줄이기 */
   }
 
@@ -133,7 +165,8 @@ input {
 @media (max-width: 480px) {
   .reviewNicknameInput,
   .reviewPasswordInput,
-  .reviewContentInput {
+  .reviewContentInput,
+  .starSelect {
     font-size: 12px; /* 더 작은 화면에서 폰트 크기 줄이기 */
   }
 

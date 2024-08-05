@@ -12,11 +12,13 @@ const setReviewData = () => {
   let nickname = document.querySelector(".reviewNicknameInput").value;
   let password = document.querySelector(".reviewPasswordInput").value;
   let content = document.querySelector(".reviewContentInput").value;
+  let star = document.querySelector("#star").value;
 
   let obj = {
     nickname: nickname,
     password: password,
     content: content,
+    star: star,
   };
 
   let review = JSON.parse(localStorage.getItem(`review${movieId}`)) || [];
@@ -31,6 +33,7 @@ const addReviewCard = () => {
   let nickname = document.querySelector(".reviewNicknameInput").value;
   let password = document.querySelector(".reviewPasswordInput").value;
   let content = document.querySelector(".reviewContentInput").value;
+  let star = document.querySelector("#star").value;
 
   if (!nickname) {
     return alert("닉네임을 입력해주세요");
@@ -38,7 +41,10 @@ const addReviewCard = () => {
     return alert("비밀번호를 입력해주세요");
   } else if (!content) {
     return alert("리뷰를 입력해주세요");
-  } else {
+  } else if (!star) {
+    return alert("평점을 입력해주세요");
+  }
+  {
     setReviewData();
   }
 };
@@ -60,12 +66,15 @@ const makeReviewData = () => {
     let nickname = element.nickname;
     let password = element.password;
     let content = element.content;
+    let star = "⭐".repeat(element.star);
 
     reviewOutputBox.innerHTML += `
       <div class="oneReview">
         <div class="outputNickname">${nickname}</div>
+        <div class="outputContent">${star}</div>
         <div class="outputContent">${content}</div>
         <button class="deleteBtn" id="${password}">X</button>
+        <button class="editBtn" id="${password}">수정</button>
       </div>`;
   });
 };
@@ -99,7 +108,7 @@ function deleteReview({ target }) {
       reviewData = reviewData.filter((n) => n !== deleteCard);
       localStorage.setItem(`review${movieId}`, JSON.stringify(reviewData));
       alert("리뷰가 삭제되었습니다.");
-      window.location.reload();
+      location.reload();
     } else {
       alert("비밀번호가 일치하지 않습니다.");
     }
