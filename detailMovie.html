@@ -1,81 +1,48 @@
-
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ꔛ9르면서 영화보기ꔛ</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Jua&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/detailMovie.css" />
+    <link rel="stylesheet" href="./css/review.css" />
+    <script type="module" src="./js/review.js"></script>
+  </head>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>구르면서 영화보기</title>
-    <link rel="stylesheet" href="./css/detailMovie.css">
-</head>
-
-<body>
-
+  <body>
     <header>
-
-        <div class="titleSection">
-            <button type="button" id="home-button">home</button>
-            <h1 class="title">구르면서 영화보기</h1>
-            <div style="width: 70px;"> </div>
-        </div>
-
+      <div class="titleSection">
+        <h1 class="title"><a href="./index.html">구르면서 영화보기</a></h1>
+      </div>
     </header>
 
-
     <section class="allPosition">
+      <div id="topPosition"></div>
 
-        <div class="topPosition">
-
-            <div class="moviePic">
-                movie-image
-                <!-- <img src="" alt="영화이미지" /> -->
+      <div class="reviewDiv">
+        <div class="reviewBox">
+          <div class="reviewInputBox">
+            <div>
+              <div>
+                <input class="reviewNicknameInput" placeholder="닉네임" />
+                <input class="reviewPasswordInput" placeholder="비밀번호" />
+              </div>
+              <div>
+                <textarea
+                  class="reviewContentInput"
+                  placeholder="리뷰를 입력해주세요"
+                ></textarea>
+                <button class="reviewAddBtn">추가</button>
+              </div>
             </div>
-
-
-            <div class="contents">
-                <div class="contents1">
-                    <div class="theme">영화제목</div>
-                    <div class="summary">줄거리</div>
-                </div>
-
-                <div class="contents2">
-                    <div class="genre">장르</div>
-                    <div class="date">개봉일</div>
-                    <div class="rate">평점</div>
-                </div>
-            </div>
+          </div>
+          <div class="reviewOutputBox"></div>
         </div>
-
-
-
-
-
-
-        <div class="bottomPosition">
-
-            <div>
-                <input type="text" id="writer" placeholder="작성자" />
-                <input type="text" id="password" placeholder="비밀번호" />
-            </div>
-
-            <div>
-                <input type="text" id="review-input" placeholder="입력하세요." />
-                <button type="button" id="review-button">작성</button>
-            </div>
-
-            <div>
-                <p class="reviews">리뷰들</p>
-            </div>
-
-        </div>
-
+      </div>
     </section>
-
-
-
-
-
-</body>
-
+  </body>
 </html>
-
