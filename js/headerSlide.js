@@ -1,16 +1,18 @@
 import { movies, fetchMovies } from "./fetchData.js";
-
+import "./genre.js";
+import "./search.js";
+import "./sort.js";
 
 fetchMovies().then(() => {
   sliderFunc();
-})
+});
 
 function sliderFunc() {
   const slideWrap = document.querySelector("#slider__wrap");
   const slider = slideWrap.querySelector("#slider");
 
   // 영화 데이터를 기반으로 슬라이더 요소 생성
-  movies.forEach(movie => {
+  movies.forEach((movie) => {
     const sliderLi = document.createElement("li");
     sliderLi.classList.add("slider-card");
     sliderLi.innerHTML = `
@@ -46,17 +48,18 @@ function sliderFunc() {
   }, 0);
 
   function moveSlide(direction) {
-    slider.style.transition = `all ${speedTime}ms ease`;
     currentIdx += direction;
-    slider.style.transform = `translateX(${-liWidth * currentIdx}px)`;
+    translate += -liWidth * direction;
+    slider.style.transform = `translateX(${translate}px)`;
+    slider.style.transition = `all ${speedTime}ms ease`;
 
-    slider.addEventListener('transitionend', () => {
+    slider.addEventListener("transitionend", () => {
       if (currentIdx === sliderItems.length - 1) {
-        slider.style.transition = 'none';
+        slider.style.transition = "none";
         currentIdx = 1;
         slider.style.transform = `translateX(${-liWidth * currentIdx}px)`;
       } else if (currentIdx === 0) {
-        slider.style.transition = 'none';
+        slider.style.transition = "none";
         currentIdx = sliderItems.length - 2;
         slider.style.transform = `translateX(${-liWidth * currentIdx}px)`;
       }
@@ -76,10 +79,10 @@ function sliderFunc() {
     clearInterval(slideInteval);
   }
 
-  sliderItems.forEach(item => {
-    item.addEventListener('mouseover', stopSliding);
-    item.addEventListener('mouseout', startSliding);
+  sliderItems.forEach((item) => {
+    item.addEventListener("mouseover", stopSliding);
+    item.addEventListener("mouseout", startSliding);
   });
 
   startSliding();
-};
+}

@@ -1,10 +1,9 @@
 a {
   text-decoration: none;
-  color: rgb(255, 0, 0);
 }
 
 .titleSection {
-  font-family: 'jua';
+  font-family: "jua";
   font-size: 24px;
   height: 50px;
   display: flex;
@@ -12,6 +11,15 @@ a {
   align-items: center;
   justify-content: center;
   padding: 20px;
+}
+.title {
+  text-decoration: none;
+  color: rgb(255, 0, 0);
+  transition: all 0.5s ease;
+}
+
+.title:hover {
+  color: white;
 }
 
 #home-button {
@@ -65,7 +73,7 @@ a {
 }
 
 .theme {
-  font-family: 'jua';
+  font-family: "jua";
   font-size: 24px;
   font-weight: bold;
 }
