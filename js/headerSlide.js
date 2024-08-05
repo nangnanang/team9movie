@@ -66,3 +66,4 @@ function sliderFunc() {
     showSliding();
   }
 };
+

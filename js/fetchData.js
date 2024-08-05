@@ -34,7 +34,6 @@ export async function fetchMovies(pages = 4) {
     )
   });
   movies = [...newMovies];
-  console.log(movies);
   return newMovies;
 }
 

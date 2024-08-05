@@ -21,11 +21,12 @@
   color: white;
   font-size: 24px;
   padding-right: 30px;
+  font-family: 'jua';
 }
 
 .genre > button:hover {
   color: gray;
-  transition: all 0.8;
+  transition: all 0.5s;
 }
 
 @media (min-width: 780px) {
@@ -209,8 +210,36 @@ a {
   color: white;
 }
 
+/* ----------------정렬 버튼--------------- */
+.newOld {
+  position: relative;
+  background: rgb(0, 0, 0);
+  background: linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(82, 71, 71, 0.925) 54%,
+    rgb(0, 0, 0) 100%
+  );
+  padding: 10px 0;
+}
+
+.newOld > button {
+  position: relative;
+  left: 68%;
+  top: 10px;
+  color: white;
+  background: none;
+  border: none;
+  font-family: 'jua';
+  font-size: 18px;
+  cursor: pointer;
+  /* margin-left: 20px; */
+}
+
+/* --------------영화 카드-------------------- */
+
 .card-container {
-  height: 100%;
+  /* height: 100%; */
   margin: 0 auto;
   background: rgb(0, 0, 0);
   background: linear-gradient(
@@ -266,11 +295,12 @@ a {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100%;
+  height: max-content;
 }
 .oneCard img {
   width: 100%;
   object-fit: cover;
+  height: 390px;
   /* 이미지가 카드 영역에 맞게 자르기 */
   display: block;
   /* 이미지를 블록 요소로 설정하여 여백 제거 */
@@ -285,6 +315,7 @@ a {
   /* 상단 정렬 */
   align-items: center;
   width: 100%;
+  box-sizing: border-box;
 
   /* 카드의 너비에 맞추어 설정 */
 }
@@ -292,10 +323,14 @@ a {
 .contentTitle {
   color: #000000;
   font-weight: bold;
-  text-align: center; /* 텍스트 가운데 정렬 */
+  text-align: left; /* 텍스트 가운데 정렬 */
   margin: 0; /* 불필요한 외부 여백 제거 */
   padding: 10px 0; /* 위아래에 약간의 여백 추가 */
   width: 100%; /* 부모 요소의 전체 너비 사용 */
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  font-size: 1.2em;
 }
 
 /* infoBox(vote+releaseDate) 추가 */
@@ -319,6 +354,12 @@ a {
   font-size: 18px;
 }
 
+.imgBox {
+  position: relative;
+}
+
+
+
 /* Overview 박스 스타일 */
 .overviewBox {
   position: absolute;
@@ -340,8 +381,10 @@ a {
   transition: opacity 0.3s ease, visibility 0.3s ease;
 }
 
+
+
 /* 카드에 마우스 올렸을때 overviewBox 호버 */
-.oneCard:hover .overviewBox {
+.imgBox:hover .overviewBox {
   opacity: 1;
   visibility: visible;
   flex-direction: column;
@@ -387,15 +430,11 @@ a {
   /* border-radius: 10px; */ /* 스크롤바 핸들의 둥근 모서리 */
 }
 
-.oneCard:hover .contentBox {
-  opacity: 0;
-  /*기본 상태에서는 줄거리 보이지 않도록 설정 */
-}
+
 
 /* scrollBtn */
 .scrollBtn {
   cursor: pointer;
-  /* 모양 동그랗게 */
   width: 30px;
   height: 30px;
   border-radius: 50%;
@@ -403,8 +442,7 @@ a {
   margin-left: auto;
 
   /* 하단에 붙어있게 */
-  display: flex;
-  position: sticky;
+  position: fixed;
   bottom: 50px;
   right: 50px;
 }
@@ -414,4 +452,8 @@ a {
   text-align: center;
   font-size: var(-font-medium);
   color: var(-color-dark-gray);
+}
+
+.height {
+  height: 100vh;
 }

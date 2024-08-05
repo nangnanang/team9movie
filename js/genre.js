@@ -20,23 +20,27 @@ function makeMovieCards(movies) {
     movieElement.classList.add("movie");
     movieElement.innerHTML = `
       <div class="oneCard">
-        <a href="detailMovie.html" movieId=${movie.id}>
-          <img src="https://image.tmdb.org/t/p/w500${movie.poster_path}" alt="${movie.title} 포스터">
-          <div class="contentBox">
-            <h2 class="contentTitle">${movie.title}</h2>
-            <div class="infoBox">
-              <p class="vote"><b>평점:</b> ${movie.vote_average}</p>
-              <p class="releaseDate"><b>개봉일:</b> ${movie.release_date}</p>
+        <div class="imgBox">
+            <div class="overviewBox">
+                <h3 class="overviewTitle">${movie.title}</h3>
+                <p>${movie.overview}</p>
             </div>
-          </div>
-          <div class="overviewBox">
-            <h2 class="overviewTitle">${movie.title}</h2>
-            <p>${movie.overview}</p>
-          </div>
-        </a>
-      </div>
-    `;
+            <img src="https://image.tmdb.org/t/p/w500${movie.poster_path}" alt="${movie.title} 포스터">
+        </div>
+        <a href="detailMovie.html?movieId=${movie.id}">
 
+            <div class="movie-content-position">
+                <div class="contentBox">
+                    <h2 class="contentTitle">${movie.title}</h2>
+                    <div class="infoBox">
+                        <p class="vote"><b>평점:</b> ${movie.vote_average}</p>
+                        <p class="releaseDate"><b>개봉일:</b> ${movie.release_date}</p>
+                    </div>
+                </div>
+            </div>
+        </a>
+    </div>
+    `;
     cardList.appendChild(movieElement);
   });
 }
@@ -52,7 +56,8 @@ function genreMovies(genreValue) {
     thriller: 53,
     action: 28,
     romance: 10749,
-    drama: 18
+    drama: 18,
+    fantasy: 14
   };
 
   const genreId = genreMap[genreValue];
@@ -62,6 +67,14 @@ function genreMovies(genreValue) {
 // 장르별 버튼 이벤트 주기
 function setupGenreButtons() {
   const genreButtons = document.querySelectorAll("[genre]");
+  for (const button of genreButtons) {
+    button.addEventListener("click", function () {
+      const offset = 130;
+      const scrollPosition = document.querySelector(this.dataset.target).offsetTop - offset;
+
+      window.scrollTo({ top: scrollPosition, behavior: "smooth" });
+    });
+  }
 
   genreButtons.forEach(button => {
     button.addEventListener("click", () => {
@@ -75,24 +88,27 @@ function setupGenreButtons() {
         const movieElement = document.createElement("div");
         movieElement.classList.add("movie");
         movieElement.innerHTML = `
-          <div class="oneCard">
-            <a href="detailMovie.html"  id="movieId" movieId=${movie.id}>
-              <div class="movie-content-position">
-                <img src="https://image.tmdb.org/t/p/w500${movie.poster_path}" alt="${movie.title} 포스터">
+       <div class="oneCard">
+        <div class="imgBox">
+            <div class="overviewBox">
+                <h3 class="overviewTitle">${movie.title}</h3>
+                <p>${movie.overview}</p>
+            </div>
+            <img src="https://image.tmdb.org/t/p/w500${movie.poster_path}" alt="${movie.title} 포스터">
+        </div>
+        <a href="detailMovie.html?movieId=${movie.id}">
+
+            <div class="movie-content-position">
                 <div class="contentBox">
-                  <h2 class="contentTitle">${movie.title}</h2>
-                  <div class="infoBox">
-                    <p class="vote"><b>평점:</b> ${movie.vote_average}</p>
-                    <p class="releaseDate"><b>개봉일:</b> ${movie.release_date}</p>
-                  </div>
+                    <h2 class="contentTitle">${movie.title}</h2>
+                    <div class="infoBox">
+                        <p class="vote"><b>평점:</b> ${movie.vote_average}</p>
+                        <p class="releaseDate"><b>개봉일:</b> ${movie.release_date}</p>
+                    </div>
                 </div>
-                <div class="overviewBox">
-                  <h2 class="overviewTitle">${movie.title}</h2>
-                  <p>${movie.overview}</p>
-                </div>
-              </div>
-            </a>
-          </div>
+            </div>
+        </a>
+    </div>
         `;
 
         cardList.appendChild(movieElement);

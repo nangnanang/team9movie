@@ -18,18 +18,54 @@
     <div class="titleBox" id="titleBox">
       <div class="button-container">
         <div class="genre">
-          <button class="genre-btn" id="all-btn" genre="all">전체 보기</button>
-          <button class="genre-btn" id="comedy-btn" genre="comedy">
+          <button
+            data-target="#movie-list"
+            class="genre-btn"
+            id="all-btn"
+            genre="all"
+          >
+            전체 보기
+          </button>
+          <button
+            data-target="#movie-list"
+            class="genre-btn"
+            id="comedy-btn"
+            genre="comedy"
+          >
             코미디
           </button>
-          <button class="genre-btn" id="thriller-btn" genre="thriller">
+          <button
+            data-target="#movie-list"
+            class="genre-btn"
+            id="thriller-btn"
+            genre="thriller"
+          >
             스릴러
           </button>
-          <button class="genre-btn" id="action-btn" genre="action">액션</button>
-          <button class="genre-btn" id="romance-btn" genre="romance">
+          <button
+            data-target="#movie-list"
+            class="genre-btn"
+            id="action-btn"
+            genre="action"
+          >
+            액션
+          </button>
+          <button
+            data-target="#movie-list"
+            class="genre-btn"
+            id="romance-btn"
+            genre="romance"
+          >
             로맨스
           </button>
-          <button class="genre-btn" id="drama-btn" genre="drama">드라마</button>
+          <button
+            data-target="#movie-list"
+            class="genre-btn"
+            id="drama-btn"
+            genre="drama"
+          >
+            드라마
+          </button>
         </div>
       </div>
       <div id="slider__wrap">
@@ -56,11 +92,17 @@
         </form>
       </div>
     </div>
+    <section class="height">
+      <div class="newOld">
+        <button id="newest">최신순&nbsp;&nbsp;&nbsp;/</button>
+        <button id="oldest">오래된순</button>
+      </div>
 
-    <!-- <div class="cardList" id="cardList"></div> -->
-
-    <section class="card-container">
-      <div class="cardList" id="cardList"></div>
+      <div>
+        <section id="movie-list" class="card-container">
+          <div class="cardList" id="cardList"></div>
+        </section>
+      </div>
     </section>
 
     <button class="scrollBtn">
@@ -69,7 +111,9 @@
 
     <script type="module" src="./js/fetchData.js"></script>
     <script type="module" src="./js/headerSlide.js"></script>
-    <script type="module" src="./js/genre.js" defer></script>
+    <script type="module" src="./js/genre.js"></script>
     <script type="module" src="./js/search.js"></script>
+    <script type="module" src="./js/detailPage.js"></script>
+    <script type="module" src="./js/sort.js"></script>
   </body>
 </html>
