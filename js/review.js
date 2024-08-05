@@ -22,7 +22,7 @@ const setReviewData = () => {
   };
 
   let review = JSON.parse(localStorage.getItem(`review${movieId}`)) || [];
-  review.push(obj);
+  review.unshift(obj);
 
   localStorage.setItem(`review${movieId}`, JSON.stringify(review));
   location.reload();
@@ -52,7 +52,10 @@ reviewAddBtn.addEventListener("click", addReviewCard);
 
 // 리뷰 데이터 불러오기
 const getReviewData = () => {
-  let reviewData = JSON.parse(localStorage.getItem(`review${movieId}`)) || [];
+  let reviewData = JSON.parse(localStorage.getItem(`review${movieId}`));
+  if (reviewData === null) {
+    reviewData = [];
+  }
   return reviewData;
 };
 
@@ -62,7 +65,7 @@ const makeReviewData = () => {
   reviewOutputBox.innerHTML = "";
 
   // 최신 리뷰가 위로 오도록 reverse() 사용
-  reviewData.reverse().forEach((element) => {
+  reviewData.forEach((element) => {
     let nickname = element.nickname;
     let password = element.password;
     let content = element.content;
@@ -74,7 +77,6 @@ const makeReviewData = () => {
         <div class="outputContent">${star}</div>
         <div class="outputContent">${content}</div>
         <button class="deleteBtn" id="${password}">X</button>
-        <button class="editBtn" id="${password}">수정</button>
       </div>`;
   });
 };
@@ -108,7 +110,7 @@ function deleteReview({ target }) {
       reviewData = reviewData.filter((n) => n !== deleteCard);
       localStorage.setItem(`review${movieId}`, JSON.stringify(reviewData));
       alert("리뷰가 삭제되었습니다.");
-      location.reload();
+      window.location.reload();
     } else {
       alert("비밀번호가 일치하지 않습니다.");
     }
