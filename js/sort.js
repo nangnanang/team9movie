@@ -13,7 +13,7 @@ fetchMovies().then((response) => {
     // console.log("Comparing:");
     // console.log("movie1 date:", date1);
     // console.log("movie2 date:", date2);
-   
+ 
 
     // Date 객체를 기반으로 비교하여 정렬
     return date2 - date1;
@@ -35,7 +35,7 @@ fetchMovies().then((response) => {
     // console.log("Comparing:");
     // console.log("movie1 date:", date1);
     // console.log("movie2 date:", date2);
-    // console.log(date1 - date2);
+  
 
     // Date 객체를 기반으로 비교하여 정렬
     return date1 - date2;
@@ -66,7 +66,7 @@ function setupRecentOldButtons() {
       cardList.innerHTML = "";
 
       recentMovies.forEach(movie => {
-       
+
         const movieElement = document.createElement("div");
 
         movieElement.classList.add("movie");
@@ -107,7 +107,7 @@ function setupRecentOldButtons() {
       cardList.innerHTML = "";
 
       recentMovies.forEach(movie => {
-       
+
         const movieElement = document.createElement("div");
 
         movieElement.classList.add("movie");
@@ -132,7 +132,7 @@ function setupRecentOldButtons() {
 
 
 
-  
+
 }
 //14번 우리가 정의한 동작 실행하기. 
 setupRecentOldButtons();
