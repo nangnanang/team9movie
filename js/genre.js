@@ -21,14 +21,12 @@ function makeMovieCards(movies) {
     movieElement.innerHTML = `
       <div class="oneCard">
         <div class="imgBox">
-            <div class="overviewBox">
-                <h3 class="overviewTitle">${movie.title}</h3>
+            <div class="overviewBox">             
                 <p>${movie.overview}</p>
             </div>
             <img src="https://image.tmdb.org/t/p/w500${movie.poster_path}" alt="${movie.title} 포스터">
         </div>
         <a href="detailMovie.html?movieId=${movie.id}">
-
             <div class="movie-content-position">
                 <div class="contentBox">
                     <h2 class="contentTitle">${movie.title}</h2>
@@ -90,14 +88,12 @@ function setupGenreButtons() {
         movieElement.innerHTML = `
        <div class="oneCard">
         <div class="imgBox">
-            <div class="overviewBox">
-                <h3 class="overviewTitle">${movie.title}</h3>
+            <div class="overviewBox">               
                 <p>${movie.overview}</p>
             </div>
             <img src="https://image.tmdb.org/t/p/w500${movie.poster_path}" alt="${movie.title} 포스터">
         </div>
         <a href="detailMovie.html?movieId=${movie.id}">
-
             <div class="movie-content-position">
                 <div class="contentBox">
                     <h2 class="contentTitle">${movie.title}</h2>
