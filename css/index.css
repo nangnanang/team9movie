@@ -201,7 +201,7 @@ a {
 .introduce {
   padding: 50px;
   position: absolute;
-  width: 29%;
+  width: 35%;
   right: 100px;
   top: 150px;
 
@@ -240,7 +240,7 @@ a {
 
   left: 50%; /* 부모 요소의 왼쪽에서 50% 이동 */
   transform: translateX(-50%); /* 자신의 너비의 50%만큼 왼쪽으로 이동 */
-  top: 200px;
+  top: 180px;
 }
 
 .inputBox {

@@ -33,7 +33,7 @@ body.background-reapeat .titleSection {
 }
 
 .allPosition {
-  padding: 30px 150px 20px 150px;
+  padding: 30px 150px 20px 75px;
 }
 
 .topPosition {
@@ -49,7 +49,6 @@ body.background-reapeat .titleSection {
   flex-direction: row;
   justify-content: center;
   align-items: center;
-
   float: left;
 }
 
@@ -60,12 +59,13 @@ body.background-reapeat .titleSection {
 .moviePic > img {
   float: left;
   border-radius: 10px;
+  margin-bottom: 50px;
 }
 
 .contents {
   position: relative;
-  bottom: 220px;
-  width: 50%;
+  bottom: 250px;
+  width: 44%;
   float: right;
   color: white;
 }

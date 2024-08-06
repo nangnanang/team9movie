@@ -21,7 +21,7 @@ const setReviewData = () => {
     star: star,
   };
 
-  let review = JSON.parse(localStorage.getItem(`review${movieId}`)) || [];
+  let review = getReviewData();
   review.unshift(obj);
 
   localStorage.setItem(`review${movieId}`, JSON.stringify(review));

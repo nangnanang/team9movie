@@ -103,7 +103,7 @@ function setupGenreButtons() {
                      </div>
                  </div>
              </a>
-            /div>  
+            </div>  
         `;
 
         cardList.appendChild(movieElement);
