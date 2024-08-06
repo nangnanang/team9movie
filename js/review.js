@@ -102,11 +102,12 @@ function deleteReview({ target }) {
     let passwordWindow = window.prompt("비밀번호를 입력하세요");
     if (passwordWindow === deletePassword) {
       let deleteCard = "";
-      reviewData.forEach((element, index) => {
+      for (const element of reviewData) {
         if (deletePassword === element.password) {
-          deleteCard = reviewData.splice(index, 1);
+          deleteCard = reviewData.splice(element, 1);
+          break;
         }
-      });
+      }
       reviewData = reviewData.filter((n) => n !== deleteCard);
       localStorage.setItem(`review${movieId}`, JSON.stringify(reviewData));
       alert("리뷰가 삭제되었습니다.");
